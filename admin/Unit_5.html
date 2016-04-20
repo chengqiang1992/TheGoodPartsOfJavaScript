@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" type="text/css" href="../assets/global/plugins/bootstrap-3.3.6-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/global/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../assets/pages/css/Unit_5.css"/>
 </head>
 
   <body>
@@ -61,11 +62,51 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="http://v3.bootcss.com/components/#navbar" role="button">View navbar docs »</a>
-        </p>
+          <div class="container">
+              <h2>第五章  继承</h2>
+              <h4>······往往会把一件完整的东西化成无数的形象。就像凹凸镜一般，从正面望去，之见一片模糊。</h4>
+              <h4>——威廉·莎士比亚，《理查德二世》（The Tragedy of King Richard the Second）</h4>
+              <p>在大多数编程语言中，继承都是一个重要的主题。</p>
+              <p>在那些基于类的语言（比如Java）中，继承（inheritance或extends）提供了两个有用的服务。首先，它是代码重用的一种形式。如果一个新的类与一个已存在的类大部分相似，那么你只需具体说明其不同点即可。代码重用的模式极为重要，因为它们可以显著地减少软件开发的成本。类继承的另一个好处是引入了一套类型系统的规范。由于程序员无需编写先是类型转换的代码，他们的工作量将大大减轻，这是一件很好的事情，因为类型转换会丧失类型系统在安全上的优势。</p>
+              <p>JavaScript是一门弱类型语言，从不需要类型转换。对象继承关系变得无关紧要。对于一个对象来说重要的他能做什么，而不是它从哪里来。</p>
+              <p>JavaScript提供了一套更为丰富的代码重用模式，他可以模拟那些基于类的模式，同时它也可以支持其他更具表现力的模式。在JavaScript中可能的继承模式有很多。在本章，我们将研究几种最为直接的模式。当然还有很多更为复杂的构造模式，但保持简单通常是最好的。</p>
+              <p>在基于类的语言中，对象是类的实例，并且类可以从另一个类继承。JavaScript是一门基于原型的语言，这意味着对象直接从其他对象继承。</p>
+          </div>    
+      </div>
+
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h2>伪类  Pseudoclassical</h2>
+                  <p>JavaScript的原型存在诸多矛盾。它的某些复杂的语言看起来就像那些基于类的语言，这些语法问题掩盖了它的原型机制。他不直接让对象从其他对象继承，反而插入了一个多余的间接层：<strong class="text-danger">通过构造器函数产生对象。</strong></p>
+                  <p>当一个函数对象被创建时，Function构造器产生的函数对象会运行类似这样的一些代码：</p>
+                  <pre><code> this.prototype = { constructor: this }; </code></pre>
+                  <p>新函数对象被赋予一个prototype属性，他的值是一个包含constructor属性且属性值为该函数的对象。<strong class="text-danger">这个prototype对象是存放继承特征的地方。</strong>因为JavaScript语言没有提供一种方法去确定哪个函数是打算用来做构造器的，所以每个函数都会得到prototype对象。constructor属性没有什么用，重要的是prototype对象。</p>
+                  
+                  <div class="bs-callout bs-callout-warning" id="callout-navbar-overflow">
+                    <h4>导航条内所包含元素溢出</h4>
+                    <p>由于 Bootstrap 并不知道你在导航条内放置的元素需要占据多宽的空间，你可能会遇到导航条中的内容折行的情况（也就是导航条占据两行）。解决办法如下：</p>
+                    <ol type="a">
+                      <li>减少导航条内所有元素所占据的宽度。</li>
+                      <li>在某些尺寸的屏幕上（利用 <a href="http://v3.bootcss.com/css/#responsive-utilities">响应式工具类</a>）隐藏导航条内的一些元素。</li>
+                      <li>修改导航条在水平排列和折叠排列互相转化时，触发这个转化的最小屏幕宽度值。可以通过修改 <code>@grid-float-breakpoint</code> 变量实现，或者自己重写相关的媒体查询代码，覆盖 Bootstrap 的默认值。</li>
+                    </ol>
+                  </div>
+                  <div class="bs-callout bs-callout-danger" id="callout-navbar-js">
+                    <h4>依赖 JavaScript 插件</h4>
+                    <p>如果 JavaScript 被禁用，并且视口（viewport）足够窄，致使导航条折叠起来，导航条将不能被打开，<code>.navbar-collapse</code> 内所包含的内容也将不可见。</p>
+                    <p>响应式导航条依赖 <a href="http://v3.bootcss.com/javascript/#collapse">collapse 插件</a>，定制 Bootstrap 的话时候必将其包含。</p>
+                  </div>
+                  <div class="bs-callout bs-callout-info" id="callout-navbar-breakpoint">
+                    <h4>修改视口的阈值，从而影响导航条的排列模式</h4>
+                    <p>当浏览器视口（viewport）的宽度小于  <code>@grid-float-breakpoint</code> 值时，导航条内部的元素变为折叠排列，也就是变现为移动设备展现模式；当浏览器视口（viewport）的宽度大于  <code>@grid-float-breakpoint</code> 值时，导航条内部的元素变为水平排列，也就是变现为非移动设备展现模式。通过调整源码中的这个值，就可以控制导航条何时堆叠排列，何时水平排列。默认值是 <code>768px</code> （小屏幕 -- 或者说是平板 --的最小值，或者说是平板）。</p>
+                  </div>
+                  <div class="bs-callout bs-callout-warning" id="callout-navbar-role">
+                    <h4>导航条的可访问性</h4>
+                    <p>务必使用 <code>&lt;nav&gt;</code> 元素，或者，如果使用的是通用的 <code>&lt;div&gt;</code> 元素的话，务必为导航条设置 <code>role="navigation"</code> 属性，这样能够让使用辅助设备的用户明确知道这是一个导航区域。</p>
+                  </div>
+              </div>
+          </div>
       </div>
 
     </div> <!-- /container -->
