@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="JavaScript语言精粹  附录 E  JSON">
+    <meta name="description" content="JavaScript语言精粹  附录 E  JSON">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>附录 E  JSON</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/global/plugins/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/global/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../assets/pages/css/appendix_E_JSON.css"/>
+</head>
+
+  <body>
+
+    <!-- 使用折叠（Collapse）插件  
+        参考：http://www.runoob.com/bootstrap/bootstrap-collapse-plugin.html
+        1:创建可折叠的分组或折叠面板（accordion）:
+            <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseOne">点击我进行展开，再次点击我进行折叠</a>
+
+            <div id="collapseOne" class="panel-collapse collapse in"></div>
+
+        2:创建不带 accordion 标记的简单的可折叠组件（collapsible）:
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">简单的可折叠组件</button>
+
+            <div id="demo" class="collapse in"></div>
+
+        用法
+            下表列出了折叠（Collapse）插件用于处理繁重的伸缩的 class：
+            Class               描述  
+            .collapse        隐藏内容
+            .collapse.in     显示内容
+            .collapsing     当过渡效果开始时被添加，当过渡效果完成时被移除。   
+          您可以通过以下两种方式使用折叠（Collapse）插件：
+        通过 data 属性：向元素添加 data-toggle="collapse" 和 data- target，自动分配可折叠元素的控制。data-target 属性接受一个 CSS 选择器，并会对其应用折叠效果。请确保向可折叠元素添加 class .collapse。如果您希望它默认情况下是打开的，请添加额外的 class .in。
+        为了向可折叠控件添加类似折叠面板的分组管理，请添加 data 属性 data-parent="#selector"。
+        通过 JavaScript：可通过 JavaScript 激活 collapse 方法，如下所示：
+        $('.collapse').collapse()
+
+      方法 
+      事件 -->
+
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="javascript:void(0);">附录 E  JSON</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aira-expanded="false" style="height: 1px">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="javascript:void(0);">Home</a></li>
+            <li><a href="javascript:void(0);">About</a></li>
+            <li><a href="javascript:void(0);">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧边栏</button>
+          </p>
+          <div class="jumbotron">
+            <h1>JSON</h1>
+            <p>JavaScript对象表示发（JavaScript Object Notation，简称JSON）是一种轻量级的数据交换格式。它基于JavaScript的对象字面量表示法，那是JavaScript最精华的部分之一。尽管只是JavaScript的一个子集，但它与语言无关。所有以现代编程语言编写的程序。都可以用它来彼此交换数据。他是一种文本格式，所以可以被人和机器阅读。它易于实现且易于使用。</p>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-lg-4">
+              <h2>JSON语法</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="http://v3.bootcss.com/examples/offcanvas/#" role="button">View details »</a></p>
+            </div><!--/.col-xs-6.col-lg-4-->
+            <div class="col-xs-12 col-lg-4">
+              <h2>安全地使用JSON</h2>
+              <p>JSON特别应用在Web应用中，因为JSON就是JavaScript。使用eval函数可以把一段JSON文本转换成一个有用的数据结构</p>
+               <p>然后，eval函数有着骇人的安全问题。使用eval去解析JSON文本安全吗？目前，在web浏览器中从服务器端获取数据的最佳技术就是XMLHttpRequest。XMLHttpRequest只能从生成HTML的同源浏览器服务端获取数据。使用eval解析来自那个服务器的文本与解析原来的HTML一样不安全。那是假定该服务器存在恶意的前提下，但如果它只是存在漏洞呢？</p>
+                <p>有漏洞的服务器或许并不能正确地对JSON进行编码。如果他通过拼凑一些字符串而不是使用一个合适的JSON解码器来创建JSON文本，那么它可能在无意间发送了危险的数据。</p>
+              <p>在外部数据与innerHTML进行交互时还存在另一种危险。一种常见的Ajax模式是把服务器端发送过来的一个HTML文本片段赋值给某个HTML元素的innerHTML属性。这是一个非常糟糕的习惯。如果这个HTML包含一个<code><script></script></code>标签或其他等价物，那么一个恶意脚本将被执行。这可能也是因为服务器端存在漏洞。</p>
+              <p>具体有什么危险呢？如果一个恶意脚本在你的页面上运行，它就有权访问这个页面的所有状态和执行该页面能做的所有操作。它能与你的服务器进行交互，而你的服务器将不能区分正当的请求和恶意请求。恶意脚本还能访问全局对象，这使得他有权访问应用中隐藏于比保重的变量之外的所有数据。它可以访问document对象，这会使得他有权访问用户所能看到的一切。它还给这个恶意脚本提供了与用户进行会话的能力。浏览器的地址栏和所有反钓鱼程序会告诉用户这个会话是可靠的。</p>
+              <p>有漏洞的服务器或许并不能正确地对JSON进行编码。如果他通过拼凑一些字符串而不是使用一个合适的JSON解码器来创建JSON文本，那么它可能在无意间发送了危险的数据。</p>
+              <p><a class="btn btn-default" href="http://v3.bootcss.com/examples/offcanvas/#" role="button">View details »</a></p>
+            </div><!--/.col-xs-6.col-lg-4-->
+            <div class="col-xs-12 col-lg-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="http://v3.bootcss.com/examples/offcanvas/#" role="button">View details »</a></p>
+            </div><!--/.col-xs-6.col-lg-4-->
+          </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item active">Link</a>
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item">Link</a>
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item">Link</a>
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item">Link</a>
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item">Link</a>
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item">Link</a>
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item">Link</a>
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item">Link</a>
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item">Link</a>
+            <a href="http://v3.bootcss.com/examples/offcanvas/#" class="list-group-item">Link</a>
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script type="text/javascript" src="../assets/global/plugins/JQuery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../assets/global/plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/global/scripts/global.js"></script>
+    <script type="text/javascript" src="../assets/pages/scripts/appendix_E_JSON.js"></script>
+</body>
+</html>
