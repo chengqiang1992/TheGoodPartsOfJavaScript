@@ -59,5 +59,43 @@
 
 	<script type="text/javascript" src="../assets/global/plugins/JQuery/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="../assets/global/plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        // var searchString = window.location.search.substring(1),
+        // i,val,params = searchString.split("&");
+
+        // for (i = 0; i < params.length; i++) {
+        //     val = params[i].split("=");
+        //     if (val[0] == paramName) {
+        //         return unescape(val[1]);
+        //     }
+        // }
+        // return null;
+        console.log(window.location.search);
+        console.log(window.location.search.substring(1));
+
+        console.log(window.location.search.substring(1).split("&"));
+        console.log(window.location.search.substring(1).split("&").length);
+
+        console.log(window.location.search.substring(1).split("&")[0]);
+        console.log(window.location.search.substring(1).split("&")[1]);
+        console.log(window.location.search.substring(1).split("&")[2]);
+
+        console.log(window.location.search.substring(1).split("&")[0].split("="));
+        console.log(window.location.search.substring(1).split("&")[1].split("="));
+        console.log(window.location.search.substring(1).split("&")[2].split("="));
+
+        console.log(window.location.search.substring(1).split("&")[0].split("=")[0]);
+        console.log(window.location.search.substring(1).split("&")[1].split("=")[0]);
+        console.log(window.location.search.substring(1).split("&")[2].split("=")[0]);
+
+        console.log(window.location.search.substring(1).split("&")[0].split("=")[1]);
+        console.log(window.location.search.substring(1).split("&")[1].split("=")[1]);
+        console.log(window.location.search.substring(1).split("&")[2].split("=")[1]);
+
+
+
+
+    </script>
 </body>
 </html>
