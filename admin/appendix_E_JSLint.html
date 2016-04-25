@@ -53,21 +53,34 @@
 
     <!--Begin page content-->
     <div class="container">
-        <div class="page-header">
-            <h1>附录 C  JSLint</h1>
+        <div style="text-align: right;">
+            <div class="page-header">
+                <h2>附录 C <br> JSLint</h2>
+            </div>
+
+            <!--q元素表示引自他处的内容-->
+            <q>难道我的眼镜耳朵都有了毛病？</q><br>
+            <!--cite元素表示所引用作品（如图书、文章、电影和诗歌）的标题-->
+            <cite>——威廉·莎士比亚，《错误的喜剧》（The Comedy of Errors）</cite>
         </div>
 
-        <!--q元素表示引自他处的内容-->
-        <q cite="">难道我的眼镜耳朵都有了毛病？</q><br>
-        <!--cite元素表示所引用作品（如图书、文章、电影和诗歌）的标题-->
-        <cite>--威廉·莎士比亚，《错误的喜剧》（The Comedy of Errors）</cite>
-
-        <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
-        <p>Back to <a href="http://v3.bootcss.com/examples/sticky-footer">the default sticky footer</a> minus the navbar.</p>
+        <p>在C语言还是一门新生的编程语言的时候，有一些常见的编程错误不能被原始的编译器捕获，所以一个名为<bdi>Lint</bdi>的辅助程序被开发出来，它可以通过扫描源文件来查找问题。</p>
+        <P>随着C语言趋于成熟，语言的定义被强化以消除一些不安全因素，并且编译器的预警能力得到了加强。所以<bdi>Lint</bdi>不再需要了。</P>
+        <p>JavaScript是一门“年轻”的语言。它最初设计出来用于执行web页面上那些用Java完成过于笨拙的小型任务。然而，JavaScript是一门能力很强的语言，现在已经被应用于一些大型项目中。但对于大型项目而言，很多本意是希望提高这门语言易用性的特性却成了麻烦。与是催生出来一个针对JavaScript的lint：<strong>JSLint</strong>，一个JavaScript语法检查器和校验器。</p>
+        <p><strong>JSLint</strong>是一个JavaScript的代码质量工具。它读取原文件并进行扫描。如果发现问题，它会返回一个消息描述该问题并指明该问题在源文件的大概位置。被发现的问题往往是语法错误，但也不一定全是。<strong>JSLint</strong>还会查看一些代码风格惯例及结构上的问题。它不会证明你的程序是否正确，只是提供了另一种视角帮助你辨认问题。</p>
+        <p><strong>JSLint</strong>定义了JavaScript的一个特定子集，一个比《ECMAScript语言规范》第3版的定义更严格的语言。该子集与第9章所推荐的代码风格密切相关。</p>
+        <p><strong>JSLint</strong>可以在<a href="http://www.jslint.com/">http://www.jslint.com/</a></p>
     </div>
 
-
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>未定义的变量和函数  Undefined Variables and Functions</h2>
+                <p>JavaScript最大的问题是它对全局变量的依赖，特别是隐式的全局变量。如果一个变量没有被显示声明（通常采用var语句），那么JavaScript就假定该变量是全局的。这样可能掩盖名称拼写错误或其他问题。</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">

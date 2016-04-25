@@ -9,6 +9,8 @@ html {
 body {
     /*Margin bottom by footer height*/
     margin-bottom:60px;
+    padding-top: 0px;
+    background-color: #fff
 }
 .footer {
     position:absolute;
@@ -38,4 +40,8 @@ body > .container {
 
 code {
     font-size:80%;
+}
+
+strong{
+    color: red;
 }
